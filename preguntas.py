@@ -118,7 +118,7 @@ def pregunta_04():
     # letras.
     countVectorizer = CountVectorizer(
     analyzer= analyzer,                          # el analizador de palabras de la pregunta 3.
-    lowercase=False,                             # convierte a minúsculas
+    lowercase=True,                              # convierte a minúsculas
     stop_words="english",                        # stop_words en inglés
     token_pattern=r"(?u)\b\w\w+\b",              # patrones a reconocer
     binary=False,                                # 
