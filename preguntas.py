@@ -106,7 +106,7 @@ def pregunta_04():
     from sklearn.naive_bayes import BernoulliNB 
 
     # Cargue las variables.
-    x_train, x_test, y_train, y_test = pregunta_02()
+    x_train, _, y_train, _ = pregunta_02()
 
     # Obtenga el analizador de la pregunta 3.
     analyzer = pregunta_03()
@@ -150,6 +150,7 @@ def pregunta_04():
         refit=True,
         return_train_score=True,
     )
+
     # Búsque la mejor combinación de regresores
     gridSearchCV.fit(x_train, y_train)
 
@@ -174,7 +175,7 @@ def pregunta_05():
 
     # Evalúe el pipeline con los datos de entrenamiento usando la matriz de confusion.
     cfm_train = confusion_matrix(
-        y_true= y_train,
+        y_true=y_train,
         y_pred=gridSearchCV.predict(X_train),
     )
 
