@@ -124,7 +124,7 @@ def pregunta_04():
     binary=False,                                # 
     max_df=1.0,                                  # máxima frecuencia a considerar
     min_df=5,                                    # ignora palabras con baja frecuencia
-)
+    )
 
     # Cree un pipeline que contenga el CountVectorizer y el modelo de BernoulliNB.
     pipeline = Pipeline(
