@@ -103,7 +103,7 @@ def pregunta_04():
     from sklearn.feature_extraction.text import CountVectorizer
     from sklearn.model_selection import GridSearchCV
     from sklearn.pipeline import Pipeline
-    from sklearn.naive_bayes import BernoulliNB 
+    from sklearn.naive_bayes import BernoulliNB
 
     # Cargue las variables.
     x_train, _, y_train, _ = pregunta_02()
@@ -146,7 +146,7 @@ def pregunta_04():
         estimator=pipeline,
         param_grid=param_grid,
         cv=5,
-        scoring="accuracy",
+        scoring='accuracy',
         refit=True,
         return_train_score=True,
     )
