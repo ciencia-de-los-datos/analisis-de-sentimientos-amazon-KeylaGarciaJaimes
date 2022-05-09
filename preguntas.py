@@ -117,20 +117,20 @@ def pregunta_04():
     # inferior de 5 palabras. Solo deben analizarse palabras conformadas por
     # letras.
     countVectorizer = CountVectorizer(
-        analyzer=analyzer,                          # el analizador de palabras de la pregunta 3.
-        lowercase=True,                              # convierte a minúsculas
-        stop_words="english",                        # stop_words en inglés
-        token_pattern=r"(?u)\b\w\w+\b",              # patrones a reconocer
-        binary=False,                                # 
-        max_df=1.0,                                  # máxima frecuencia a considerar
-        min_df=5,                                    # ignora palabras con baja frecuencia
+        analyzer=analyzer,
+        lowercase=True,
+        stop_words="english",
+        token_pattern=r"(?u)\b\w\w+\b",
+        binary=False,
+        max_df=1.0,
+        min_df=5,
     )
 
     # Cree un pipeline que contenga el CountVectorizer y el modelo de BernoulliNB.
     pipeline = Pipeline(
         steps=[
             ("countVectorizer", countVectorizer),
-            ("BernoulliNB()", BernoulliNB()),
+            ("BernoulliNB", BernoulliNB()),
         ],
     )
 
@@ -140,6 +140,7 @@ def pregunta_04():
     param_grid = {
         "BernoulliNB__alpha": np.linspace(0.1, 1, 10),
     }
+
     # Defina una instancia de GridSearchCV con el pipeline y el diccionario de
     # parámetros. Use cv = 5, y "accuracy" como métrica de evaluación
     gridSearchCV = GridSearchCV(
