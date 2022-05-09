@@ -60,11 +60,11 @@ def pregunta_02():
     # Divida los datos de entrenamiento y prueba. La semilla del generador de números
     # aleatorios es 12345. Use el 10% de patrones para la muestra de prueba.
     x_train, x_test, y_train, y_test = train_test_split(
-    x,
-    y,
-    test_size=0.1,
-    random_state=12345,
-    )
+        x,
+        y,
+        test_size=0.1,
+        random_state=12345,
+     )
 
     # Retorne `X_train`, `X_test`, `y_train` y `y_test`
     return x_train, x_test, y_train, y_test
@@ -143,13 +143,13 @@ def pregunta_04():
     # Defina una instancia de GridSearchCV con el pipeline y el diccionario de
     # parámetros. Use cv = 5, y "accuracy" como métrica de evaluación
     gridSearchCV = GridSearchCV(
-    estimator=pipeline,
-    param_grid=param_grid,
-    cv=5,
-    scoring="accuracy",
-    refit=True,
-    return_train_score=True,
-)
+        estimator=pipeline,
+        param_grid=param_grid,
+        cv=5,
+        scoring="accuracy",
+        refit=True,
+        return_train_score=True,
+    )
     # Búsque la mejor combinación de regresores
     gridSearchCV.fit(x_train, y_train)
 
