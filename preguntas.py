@@ -116,7 +116,7 @@ def pregunta_04():
     # límite superior para la frecuencia de palabras es del 100% y un límite
     # inferior de 5 palabras. Solo deben analizarse palabras conformadas por
     # letras.
-    countVectorizer = = CountVectorizer(
+    countVectorizer = CountVectorizer(
     analyzer= analyzer,                          # el analizador de palabras de la pregunta 3.
     lowercase=False,                             # convierte a minúsculas
     stop_words="english",                        # stop_words en inglés
